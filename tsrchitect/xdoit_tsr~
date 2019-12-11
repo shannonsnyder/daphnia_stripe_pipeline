@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#Setting variables:
+#
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source ${DIR}/configfile 
+
+cd tsr
+
+ cd BAMDIR
+
+ln -s ${BASEDIR}/${GENOME_DIR}/${GENOME_GFF} PdGenome.gff3
+     cd ..
+
+echo "... now running Rscript ${EXPERIMENT}wf*.Rscript"
+ time ./xrunSwf all
